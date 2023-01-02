@@ -57,14 +57,11 @@ function backup_tmux_file()
 # 拷贝文件
 function copy_files()
 {
-    rm -rf ~/.vimrc
-    ln -s ${PWD}/.vimplus/.vimrc ~
+    rm -rf $HOME"/.tmux.conf"
+    ln -s -f ${PWD}/.tmux/.tmux.conf $HOME
 
-    rm -rf .tmux.conf
-    ln -s -f .tmux/.tmux.conf $HOME
-
-    rm -rf .tmux.conf.local
-    cp .tmux/.tmux.conf.local $HOME
+    rm -rf $HOME"/.tmux.conf.local"
+    cp ${PWD}/.tmux/.tmux.conf.local $HOME
 }
 
 
